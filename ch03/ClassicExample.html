@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		
+		function showColor(){
+			alert(this.color);
+		}
+		
+		function createCar(sColor, iDoors, iMpg){
+			var oTempCar = new Object;
+			oTempCar.color = sColor;
+			oTempCar.doors = iDoors;
+			oTempCar.mpg = iMpg;
+			oTempCar.showColor = showColor;
+			return oTempCar;
+		}
+		
+		var oCar1 = createCar("red", 5, 25);
+		var oCar2 = createCar("blue", 2, 15);
+		oCar1.showColor(); // outputs: "red"
+		oCar2.showColor(); // outputs: "blue"
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
