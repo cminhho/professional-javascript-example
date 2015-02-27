@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+	<!-- Prototype paradigm -->
+	
+	function Car(){
+	}
+	
+	Car.prototype.color = 'red';
+	Car.prototype.doors = 4;
+	Car.prototype.mpg = 23;
+	Car.prototype.drivers = new Array('Mike', 'Sue');
+	Car.prototype.showColor = function () {
+		alert(this.color);
+	};
+	
+	var oCar1 = new Car();
+	var oCar2 = new Car();
+	oCar1.drivers.push('Matt');
+	alert(oCar1.drivers); //outputs "Mike,Sue,Matt"
+	alert(oCar2.drivers); //outputs "Mike,Sue,Matt"
+	
+	/**
+	** Here, a property called drivers is a pointer to an Array containing two names, Mike and Sue. 
+	** Because drivers is a reference value, both instances of Car point to the same array. 
+	** This means that when Matt” is added to car1.drivers, it is also reflected in car2.drivers. 
+	** Outputting either one of these pointers results in the string “Mike,Sue,Matt” being displayed.
+	**/
+	
+	<!-- Hybrid constructor/prototype paradigm -->
+	
+	function Car1(sColor, iDoor, iMpg){
+		this.color = sColor;
+		this.door = iDoor;
+		this.iMpg = iMpg;
+		this.drivers = new Array('Mike', 'Sue');
+		this.showColor = function(){
+			alert(this.color)
+		}
+	}
+	
+	var oCar3 = new Car1('red', 5, 25);
+	var oCar4 = new Car1('blue', 3, 15);
+	
+	oCar3.drivers.push('Matt');
+	
+	alert(oCar3.drivers); // outputs: "Mike, Sue, Matt"
+	alert(oCar4.drivers); // outputs: "Mike, Sue, Matt"
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+	function StringBuffer() {
+		this.__strings__ = new Array;
+	}
+	StringBuffer.prototype.append = function (str) {
+		this.__strings__.push(str);
+	};
+	StringBuffer.prototype.toString = function () {
+		return this.__strings__.join("");
+	};
+	
+	var d1 = new Date();
+	var str = new StringBuffer();
+	for(var i=0;i<10000;i++){
+		str.append("text");
+	}
+	var result = str.toString();
+	var d2 = new Date();
+	
+	console.log('Concatenation with StringBuffer: ' + (d2.getTime() - d1.getTime()) + " miliseconds");
+	
+	var d1 = new Date();
+	var str = "";
+	for(var i=0;i<10000;i++){
+		str += "text";
+	}
+	var d2 = new Date();
+	
+	console.log('Concatenation with plus: ' + (d2.getTime() - d1.getTime()) + " miliseconds");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

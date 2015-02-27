@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		function Car(){
+		}
+		
+		Car.prototype.color = "red";
+		Car.prototype.doors = 5;
+		Car.prototype.mpg = 25;
+		Car.prototype.drivers = new Array("Mike", "Sue");
+		Car.prototype.showColor = function(){
+			alert(this.color);
+		}
+		
+		var oCar1 = new Car();
+		var oCar2 = new Car();
+		
+		oCar1.drivers.push("John");
+		
+		alert(oCar1.drivers);
+		alert(oCar2.drivers);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		function selectFrom(iFirstValue, iLastValue){
+			var iChoice = iLastValue - iFirstValue + 1;
+			var result =  Math.floor(Math.random() * iChoice + iFirstValue);
+			return result;
+		}
+	
+		var aColors = ["red", "green", "blue", "yellow", "black", "purple", "brown"];
+		var sColor = aColors[selectFrom(0, 2)];
+		alert(sColor);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

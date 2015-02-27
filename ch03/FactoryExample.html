@@ -4,17 +4,20 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<script type="text/javascript">
-		function Car(sColor, iDoors, iMpg){
-			this.color = sColor;
-			this.doors = iDoors;
-			this.mpg = iMpg;
-			this.showColor = function(){
+		function Car() {
+			var oTempCar = new Object;
+			oTempCar.color = 'red';
+			oTempCar.doors = 5;
+			oTempCar.mpg = 25;
+			oTempCar.showColor = function () {
 				alert(this.color)
-			}
+			};
+			
+			return oTempCar;
 		}
 		
-		var oCar1 = new Car("red", 4, 15);
-		var oCar2 = new Car("blue", 5, 23);
+		var oCar1 = createCar("red", 4, 23);
+		var oCar2 = createCar("blue", 3, 25);
 		oCar1.showColor();    //outputs "red"
 		oCar2.showColor();    //outputs "blue"
 	</script>
