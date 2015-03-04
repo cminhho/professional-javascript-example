@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		function ClassA(sColor){
+			this.color = sColor;
+			this.sayColor = function(){
+				alert(this.color);
+			}
+		}
+		
+		function ClassB(sColor, sName){
+			this.newMethod = ClassA;
+			this.newMethod(sColor);
+			delete this.newMethod;
+			this.name = sName;
+			this.sayName = function(){
+				alert(this.name);
+			}
+		}
+		var objA = new ClassA('red');
+		var objB = new ClassB('blue', 'lamborghini');
+		
+		objA.sayColor(); // outputs: 'red'
+		objB.sayColor(); // outputs: 'blue'
+		objB.sayName(); // outputs: 'lamborghini'
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
