@@ -1,0 +1,22 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var iNum = 0;
+		var iMax = 100;
+		var iIntervalId = null;
+		function count(){
+			iNum++;
+			console.log(iNum);
+			if(iNum == iMax){
+				clearInterval(iIntervalId)
+			}
+		}
+		iIntervalId = setInterval(count, 500);
+	</script>
+</body>
+</html>
